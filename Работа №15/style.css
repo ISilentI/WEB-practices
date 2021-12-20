@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  background: #FFCE45;
+  color: white;
+}
+.upper-menu,
+.upper-menu nav,
+section,
+.content-container,
+footer,
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-card,
+.box-1-1 > .gradient-card {
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+html {
+  scroll-behavior: smooth;
+}
+#home,
+#section-1 {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+
+/* ========== Menu ========== */
+.upper-menu {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 1em 8em;
+  background: #7E370C;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+#logo {
+  width: 50px;
+  transition: 0.3s;
+}
+#logo:hover {
+  transform: scale(1.2);
+}
+.upper-menu nav {
+  justify-content: space-between;
+  width: max-content;
+}
+.upper-menu nav a {
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  transition: 0.3s;
+}
+.upper-menu nav a:hover {
+  border: 1px solid #f5a62f;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 0px;
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffa200, #d9670f);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #6b33fa, #e38d8d);
+}
+
+/* ========== Home ========== */
+#home {
+  padding: 6em 0 0;
+}
+#home .movies {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#home .movies li {
+  max-width: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #778bb3;
+}
+#home .movies li img {
+  max-width: 200px;
+  border-radius: 12px;
+}
+#home .movies li h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 15px 10px 0;
+  margin-top: auto;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ========== Section 1 ========== */
+#section-1 .wrapper {
+  width: 400px;
+  color: #000;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+#section-1 .wrapper header {
+  display: flex;
+  font-size: 21px;
+  font-weight: 500;
+  color: #43affc;
+  padding: 16px 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+#section-1 header i {
+  font-size: 0em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+#section-1 .wrapper.active header i {
+  margin-left: 5px;
+  font-size: 30px;
+}
+#section-1 .wrapper .input-part {
+  margin: 20px 25px 30px;
+}
+#section-1 .wrapper.active .input-part {
+  display: none;
+}
+#section-1 .input-part .info-txt {
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+#section-1 .input-part .info-txt.error {
+  color: #721c24;
+  display: block;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+#section-1 .input-part .info-txt.pending {
+  color: #0c5460;
+  display: block;
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+}
+#section-1 .input-part :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 7px;
+}
+#section-1 .input-part input {
+  text-align: center;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+}
+#section-1 .input-part input:is(:focus, :valid) {
+  border: 2px solid #43affc;
+}
+#section-1 .input-part input::placeholder {
+  color: #77436b;
+}
+#section-1 .input-part .separator {
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  background: #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#section-1 .separator::before {
+  content: 'or';
+  color: #b3b3b3;
+  font-size: 19px;
+  padding: 0 15px;
+  background: #fff;
+}
+#section-1 .input-part button {
+  color: #fff;
+  cursor: pointer;
+  background: #43affc;
+  transition: 0.3s ease;
+}
+#section-1 .input-part button:hover {
+  background: #1d9ffc;
+}
+#section-1 .wrapper .weather-part {
+  display: none;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#section-1 .wrapper.active .weather-part {
+  display: flex;
+}
+#section-1 .weather-part img {
+  max-width: 125px;
+}
+#section-1 .weather-part .temp {
+  display: flex;
+  font-weight: 500;
+  font-size: 72px;
+}
+#section-1 .weather-part .temp .numb {
+  font-weight: 600;
+}
+#section-1 .weather-part .temp .deg {
+  font-size: 40px;
+  display: block;
+  margin: 10px 5px 0 0;
+}
+#section-1 .weather-part .weather {
+  font-size: 21px;
+  text-align: center;
+  margin: -5px 20px 15px;
+}
+#section-1 .weather-part .location {
+  display: flex;
+  font-size: 19px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+#section-1 .location i {
+  font-size: 22px;
+  margin: 4px 5px 0 0;
+}
+#section-1 .weather-part .bottom-details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+#section-1 .bottom-details .column {
+  display: flex;
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+#section-1 .column i {
+  color: #5dbbff;
+  font-size: 40px;
+}
+#section-1 .column.humidity {
+  border-left: 1px solid #ccc;
+}
+#section-1 .column .details {
+  margin-left: 3px;
+}
+#section-1 .details .temp,
+#section-1 .humidity span {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: -3px;
+}
+#section-1 .details .temp .deg {
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+#section-1 .column .details p {
+  font-size: 14px;
+  margin-top: -6px;
+}
+#section-1 .humidity i {
+  font-size: 37px;
+}
+
+/* ========== Footer ========== */
+footer {
+  padding: 1em;
+  background: #1b1b1b;
+}

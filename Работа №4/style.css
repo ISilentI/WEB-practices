@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  background: #FFCE45;
+  color: white;
+}
+header,
+nav,
+section,
+.content-container,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-card,
+.box-1-1 > .gradient-card {
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== Menu ==========*/
+header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 1em 8em;
+  background: #7E370C;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+#logo {
+  width: 50px;
+  transition: 0.3s;
+}
+#logo:hover {
+  transform: scale(1.2);
+}
+nav {
+  justify-content: space-between;
+  width: max-content;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  transition: 0.3s;
+}
+nav a:hover {
+  border: 1px solid #f05454;
+}
+
+/* ========== Hero Section ==========*/
+section {
+  width: 100%;
+  height: 100vh;
+}
+#home {
+  justify-content: space-evenly;
+}
+.gradient-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding: 3em;
+  border-radius: 1.5em;
+  background: linear-gradient(to bottom left, rgb(216, 48, 48), rgb(222, 42, 246));
+}
+
+/* ========== Section 1 ==========*/
+#section-1 {
+  flex-direction: column;
+  justify-content: space-around;
+}
+.box-1-1 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.box-1-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.box-1-1 > .gradient-card {
+  background: linear-gradient(to bottom left, #29d6be, #0096cf);
+}
+
+/* ========== Section 2 ==========*/
+#section-2 {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box-2-1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+.box-2-2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.box-2-1 > .gradient-card {
+  background: linear-gradient(to bottom left, rgb(0, 233, 157), rgb(43, 87, 141));
+}
+.box-2-2 > .gradient-card {
+  background: linear-gradient(to bottom left, rgb(26, 27, 27), rgb(43, 87, 141));
+}
+
+/* ========== Section 3 ==========*/
+#section-3 {
+  flex-direction: column;
+  justify-content: space-around;
+}
+.box-3-1 {
+  width: 100%;
+  display: flex;
+}
+.box-3-2 {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+}
+.box-3-3 {
+  width: 100%;
+  display: flex;
+}
+.box-3-1 > .gradient-card {
+  background: linear-gradient(to bottom left, rgb(90, 7, 153), rgb(16, 20, 85));
+}
+.box-3-2 > .gradient-card {
+  background: linear-gradient(to bottom left, rgb(153, 11, 7), rgb(16, 20, 85));
+}
+.box-3-3 > .gradient-card {
+  background: linear-gradient(to top right, rgb(100, 13, 10), rgb(255, 0, 151));
+}
+.box-3-2:hover {
+  align-items: flex-start;
+}
+.box-3-3:hover {
+  flex-direction: column;
+}
+
+/* ========== Section 4 ==========*/
+#section-4 {
+  justify-content: space-around;
+}
+.box-4-1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.box-4-2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.box-4-1 > .gradient-card {
+  background: linear-gradient(to top right, rgb(254, 254, 254), rgb(255, 0, 151));
+}
+.box-4-2 > .gradient-card {
+  background: linear-gradient(to top right, rgb(143, 125, 124), rgb(128, 32, 89));
+}
+
+/* ========== Section 5 ==========*/
+#section-5 {
+  justify-content: space-around;
+}
+#section-5 > .this {
+  align-self: flex-end;
+  order: 2;
+}
+
+/* ========== Section 6 ==========*/
+#section-6 {
+  flex-wrap: wrap;
+}
+#section-6 > div {
+  background: linear-gradient(to bottom left, rgb(69, 132, 53), rgb(82, 231, 143));
+}
+
+/* ========== Footer ==========*/
+footer {
+  background: #161a20;
+  padding: 3em;
+}

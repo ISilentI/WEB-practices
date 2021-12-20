@@ -1,0 +1,845 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  background: #FFCE45;
+  color: white;
+}
+header,
+nav,
+section,
+.content-container,
+footer,
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-card,
+.box-1-1 > .gradient-card {
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+html {
+  scroll-behavior: smooth;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ========== Menu ==========*/
+header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 1em 8em;
+  background: #7E370C;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+#logo {
+  width: 50px;
+  transition: 0.3s;
+}
+#logo:hover {
+  transform: scale(1.2);
+}
+nav {
+  justify-content: space-between;
+  width: max-content;
+}
+nav a {
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  transition: 0.3s;
+}
+nav a:hover {
+  border: 1px solid #f05454;
+}
+
+/* ========== Scrollbar ==========*/
+::-webkit-scrollbar {
+  width: 0px;
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffa200, #d9670f);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #6b33fa, #e38d8d);
+}
+
+/* ========== Home Cards ==========*/
+#home .box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+#home .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skew(15deg);
+  transition: 0.3s;
+}
+#home .box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.3s;
+  filter: blur(30px);
+}
+#home .box:hover::before,
+#home .box:hover::after {
+  transform: skewX(0deg);
+}
+#home .box:nth-child(1)::before,
+#home .box:nth-child(1)::after {
+  background: linear-gradient(315deg, #00d4ff, #3bd597, #000000);
+}
+#home .box:nth-child(2)::before,
+#home .box:nth-child(2)::after {
+  background: linear-gradient(315deg, #ffd5d5, #e7df37, #ff6100);
+}
+#home .box:nth-child(3)::before,
+#home .box:nth-child(3)::after {
+  background: linear-gradient(315deg, #83eeff, #9237e7, #ff00b5);
+}
+#home span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+#home span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.3s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+#home .box:hover span::before {
+  top: -50px;
+  left: 50px;
+  width: 110px;
+  height: 100px;
+  opacity: 1;
+}
+#home span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.3s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  animation-delay: -1s;
+}
+#home .box:hover span::after {
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+#home .content {
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  transition: 0.3s;
+  z-index: 1;
+}
+#home .box:hover .content {
+  left: -25px;
+  padding: 60px 40px;
+}
+#home .content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+#home .content p {
+  margin-bottom: 20px;
+}
+#home .content a {
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* ========== Section 1 ==========*/
+#section-1 .card {
+  position: relative;
+  width: 450px;
+  background: linear-gradient(120deg, #ff3700, #f1c355, #dce8a0);
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  color: #eee;
+  border-radius: 1em;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+}
+#section-1 .card .imgBx {
+  width: 150px;
+  flex: 0 0 150px;
+  margin-right: 20px;
+}
+#section-1 .card img {
+  width: 100%;
+  border-radius: 1em;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+}
+/* ========== Section 2 ==========*/
+#section-2 a {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+#section-2 a::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: -90px;
+  left: 0;
+  background: linear-gradient(-45deg, #ff3700, #85f4e5);
+  transition: 0.3s;
+}
+#section-2 a:hover::after {
+  transform: translateY(90px);
+}
+#section-2 a:hover {
+  transform: translateY(-10px);
+}
+#section-2 .fa {
+  font-size: 30px;
+  line-height: 80px;
+  position: relative;
+  z-index: 3;
+}
+
+/* ========== Section 3 ==========*/
+#section-3 .box {
+  position: relative;
+}
+#section-3 .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+#section-3 .square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+#section-3 .square:nth-child(2) {
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+#section-3 .square:nth-child(3) {
+  bottom: 50px;
+  right: -60px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+#section-3 .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+#section-3 .square:nth-child(5) {
+  top: -80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+}
+#section-3 .container {
+  position: relative;
+  width: 400px;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+#section-3 .form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+#section-3 .form h2 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+#section-3 .form h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: #fff;
+}
+#section-3 .inputBox {
+  width: 100%;
+  margin-top: 20px;
+}
+#section-3 .inputBox input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+#section-3 .inputBox input::placeholder {
+  color: #ccc;
+}
+#section-3 .inputBox input[type='submit'] {
+  background: #fff;
+  color: #666;
+  max-width: 100px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+#section-3 .forget a {
+  color: #ff9600;
+}
+
+/* ========== Section 4 ==========*/
+#section-4 a {
+  position: relative;
+  padding: 15px 30px;
+  margin: 10px;
+  background: #ff6100;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  overflow: hidden;
+  font-size: 2rem;
+}
+#section-4 a:hover {
+  background: #f0b896;
+}
+#section-4 a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: 0.3s;
+}
+#section-4 a:hover::before {
+  transform: translateX(200%);
+}
+
+/* ========== Section 5 ==========*/
+#section-5 {
+  background: linear-gradient(45deg, #ff3700, #eca144);
+}
+#section-5 .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+#section-5 .card .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #c3e287;
+  clip-path: circle(180px at center 0);
+  text-align: center;
+}
+#section-5 .card .circle h2 {
+  color: #fff;
+  font-size: 5em;
+  padding: 30px;
+}
+#section-5 .card .content {
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  text-align: center;
+}
+#section-5 .card .content p {
+  color: #262626;
+}
+#section-5 .card .content a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #c3e287;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+#section-5 .card:nth-child(2) .circle,
+#section-5 .card:nth-child(2) .content a {
+  background: #879be2;
+}
+#section-5 .card:nth-child(3) .circle,
+#section-5 .card:nth-child(3) .content a {
+  background: #d887e2;
+}
+#section-5:hover .card {
+  filter: blur(20px);
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+#section-5 .card:hover {
+  filter: blur(0px);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* ========== Section 6 ==========*/
+#section-6 .card {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #e2b687;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#section-6 .card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #e28787;
+  transform: skewY(345deg);
+  transition: 0.3s;
+}
+#section-6 .card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+#section-6 .card::after {
+  content: 'ТОП-1';
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  font-weight: 600;
+  font-size: 8rem;
+  color: rgba(0, 0, 0, 0.1);
+}
+#section-6 .card .imgBx {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+#section-6 .card .imgBx img {
+  max-width: 65%;
+  transition: 0.3s;
+}
+#section-6 .card:hover .imgBx img {
+  max-width: 50%;
+}
+#section-6 .card .content {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+#section-6 .card .content h3 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#section-6 .card .content .price {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+#section-6 .card .content .buy {
+  position: relative;
+  top: 200px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  background: #e28787;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+#section-6 .card:hover .content .buy {
+  top: 0;
+  opacity: 1;
+}
+
+/* ========== Section 7 ==========*/
+#section-7 .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #94e287;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: 0.3s;
+}
+#section-7:hover .card {
+  opacity: 0.2;
+}
+#section-7 .card:hover {
+  opacity: 1;
+}
+#section-7 .card::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+#section-7 .card .content {
+  padding: 30px;
+  text-align: center;
+}
+#section-7 .card .content h2 {
+  position: absolute;
+  right: 30px;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #5adb3c;
+  z-index: 1;
+  opacity: 0.1;
+  transition: 0.3s;
+}
+#section-7 .card:hover .content h2 {
+  opacity: 1;
+  transform: translateY(-70px);
+}
+#section-7 .card .content h3 {
+  position: relative;
+  font-size: 1.5rem;
+  z-index: 2;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+#section-7 .card:hover .content h3,
+#section-7 .card:hover .content p {
+  opacity: 1;
+}
+#section-7 .card .content p {
+  position: relative;
+  z-index: 2;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+#section-7 .card .content a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #fff;
+  color: #5adb3c;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#section-7 .card span {
+  transition: 0.3s;
+  opacity: 0;
+}
+#section-7 .card:hover span {
+  opacity: 1;
+}
+#section-7 .card span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #00ff84);
+  animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+#section-7 .card span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #00ff4c);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+#section-7 .card span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #12ff00);
+  animation: animate3 2s linear infinite;
+}
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+#section-7 .card span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #6cff00);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* ========== Section 8 ==========*/
+#section-8 .card {
+  position: relative;
+  width: 275px;
+  height: 400px;
+  background: linear-gradient(#ff9500, #ff9500 30%, #ffdba9 30%, #ffdba9);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+#section-8 .card .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  transform-origin: top;
+}
+#section-8 .card:hover .imgBx {
+  transform: translateY(30px) scale(0.5);
+}
+#section-8 .card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#section-8 .card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  transform: translateY(50%);
+  transition: 0.3s;
+}
+#section-8 .card:hover .content {
+  transform: translateY(0);
+}
+#section-8 .card .content .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#section-8 .card .content .details h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+#section-8 .card .content .details h2 span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ff9500;
+}
+#section-8 .social-icons {
+  position: relative;
+  display: flex;
+}
+#section-8 .social-icons li {
+  list-style: none;
+  margin: 4px;
+}
+#section-8 .social-icons li a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff9500;
+  border-radius: 50%;
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+#section-8 .social-icons li a:hover {
+  transform: rotate(360deg);
+  background: #d6b991;
+}
+
+/* ========== Footer ==========*/
+footer {
+  background: #161a20;
+  padding: 3em;
+}

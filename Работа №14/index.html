@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14-th</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://use.fontawesome.com/7f6327f19d.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  </head>
+  <body>
+    <header>
+      <a id="logo-ref" href="#"><img id="logo" src="https://cdn-icons-png.flaticon.com/512/4200/4200120.png" alt="Логотип"/></a>
+      <nav>
+        <a href="#home">Главная</a>
+        <a href="#section-1">Раздел 1</a>
+      </nav>
+    </header>
+    <section id="home">
+      <div class="results">
+        <div id="cat_result" class="result"><p>Случайный кот</p></div>
+        <div id="dog_result" class="result"><p>Случайная собака</p></div>
+      </div>
+      <div class="buttons">
+        <button id="cat_btn">Получить кота</button>
+        <button id="dog_btn">Получить собаку</button>
+      </div>
+    </section>
+    <section id="section-1">
+      <div class="currency-row-outer">
+        <div class="currency-converter">
+          <h2>Конвертер Валют</h2>
+          <div class="field grid-50-50">
+            <div class="colmun col-left">
+              <input
+                type="number"
+                class="form-input"
+                id="number"
+                placeholder="00000"
+              />
+            </div>
+            <div class="colmun col-right">
+              <div class="select">
+                <select
+                  name="currency"
+                  class="currency"
+                  onchange="updatevalue()"
+                ></select>
+              </div>
+            </div>
+          </div>
+          <div class="field grid-50-50">
+            <div class="colmun col-left">
+              <input
+                type="text"
+                class="form-input"
+                id="output"
+                placeholder="00000"
+                disabled
+              />
+            </div>
+            <div class="colmun col-right">
+              <div class="select">
+                <select
+                  name="currency"
+                  class="currency"
+                  onchange="updatevalue()"
+                ></select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>2021© Student MIREA. ALL RIGHTS RESERVED</footer>
+    <script src="app.js"></script>
+  </body>
+</html>

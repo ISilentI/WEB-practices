@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    font-family: sans-serif;
+    background: #1C0C5B;
+    color: #fff;
+}
+
+header, nav, section, .content-container, footer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header
+{
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 1em 3em;
+    background: #3D2C8D;
+    box-shadow: 0 5px 20px 5px rgba(241, 140, 216, 0.733);
+}
+
+#logo
+{
+    width: 50px;
+    transition: 0.12s;
+}
+#logo:hover
+{
+    transform: scale(1.35);
+}
+
+nav
+{
+    justify-content: space-between;
+    width: 40%;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: #fff;
+    padding: 1em 2em;
+    border: 1px solid transparent;
+    border-radius: .3em;
+    transition: .3s;
+}
+
+nav a:hover
+{
+    border: 1px solid #C996CC;
+    transition: 0.35s;
+}
+
+section
+{
+    width: 100%;
+    height: 100vh;
+}
+
+.content-container
+{
+    gap: 10em;
+    max-width: 80%;
+}
+
+h1, h2
+{
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+span
+{
+    color: #916BBF;
+}
+
+.text-container
+{
+    max-width: 40%;
+}
+
+footer
+{
+    background: #916BBF;
+    padding: 3em;
+}

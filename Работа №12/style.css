@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  background: #FFCE45;
+  color: white;
+}
+header,
+header nav,
+section,
+.content-container,
+footer,
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-card,
+.box-1-1 > .gradient-card {
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+html {
+  scroll-behavior: smooth;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+
+/* ========== Menu ========== */
+header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 1em 8em;
+  background: #7E370C;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+#logo {
+  width: 50px;
+  transition: 0.3s;
+}
+#logo:hover {
+  transform: scale(1.2);
+}
+header nav {
+  justify-content: space-between;
+  width: max-content;
+}
+header nav a {
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  transition: 0.3s;
+}
+header nav a:hover {
+  border: 1px solid #2e3758;
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 0px;
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffa200, #d9670f);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #6b33fa, #e38d8d);
+}
+
+/* ========== Home ========== */
+#home .emoji {
+  font-size: 10rem;
+  cursor: pointer;
+  user-select: none;
+}
+#home .closed,
+#home .open {
+  display: none;
+}
+#home .active {
+  display: block;
+}
+
+/* ========== Section 1 ========== */
+#section-1 h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+#section-1 #info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#section-1 #info div {
+  background: linear-gradient(45deg, #2e3758, #41897c, #d749bf);
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 250px;
+  font-size: 1.2rem;
+}
+/* ========== Section 2 ========== */
+#section-2 .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+#section-2 .card {
+  position: relative;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  background: #3f3f3f;
+}
+#section-2 .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 20px solid transparent;
+  border-top: 20px solid #17e78c;
+  border-right: 20px solid #17e78c;
+}
+#section-2 .card.active::before {
+  border-top: 20px solid #ff3b7e;
+  border-right: 20px solid #ff3b7e;
+}
+#section-2 .icon {
+  margin-bottom: 10px;
+}
+#section-2 img {
+  max-width: 90px;
+}
+#section-2 .card .content {
+  position: relative;
+  height: 215px;
+  overflow: hidden;
+}
+#section-2 .card.active .content {
+  height: auto;
+  margin-bottom: 30px;
+}
+#section-2 .card .content::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(transparent, #3f3f3f);
+}
+#section-2 .card.active .content::before {
+  display: none;
+}
+#section-2 .card .content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#section-2 .card .content p {
+  color: #ccc;
+  font-weight: 300;
+}
+#section-2 .card .more {
+  position: relative;
+  padding: 10px 15px;
+  background: #17e78c;
+  margin-top: 15px;
+  color: #3f3f3f;
+  font-weight: 600;
+}
+#section-2 .card.active .more {
+  color: #fff;
+  background: #ff3b7e;
+}
+#section-2 .card .more::before {
+  content: 'Подробнее';
+}
+#section-2 .card.active .more::before {
+  content: 'Скрыть';
+}
+
+/* ========== Section 3 ========== */
+#section-3 nav {
+  position: relative;
+  display: flex;
+}
+#section-3 nav a {
+  position: relative;
+  margin: 0 20px;
+  font-size: 2rem;
+}
+#section-3 nav #marker {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(45deg, #3503ad, #f7308c);
+  bottom: -8px;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+/* ========== Section 4 ========== */
+#section-4 .navigation {
+  position: relative;
+  width: 350px;
+  height: 70px;
+}
+#section-4 ul {
+  display: flex;
+}
+#section-4 ul li {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+#section-4 ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#section-4 ul li a .icon {
+  position: relative;
+  line-height: 75px;
+  transition: 0.3s;
+  font-size: 30px;
+}
+#section-4 ul li.active a .icon {
+  font-size: 20px;
+  transform: translateY(-6px);
+}
+#section-4 ul li a .text {
+  position: absolute;
+  font-size: 12px;
+  bottom: 20px;
+  font-weight: 400;
+  transition: 0.2s;
+  text-transform: uppercase;
+  transform: scale(0);
+}
+#section-4 ul li.active a .text {
+  transform: scale(1);
+}
+.indicator {
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+#section-4 ul li:nth-child(1).active ~ .indicator {
+  background: #f53b57;
+  box-shadow: 0 15px 25px #f53b5799;
+  transform: translateX(calc(70px * 0));
+}
+#section-4 ul li:nth-child(2).active ~ .indicator {
+  background: #5d62fd;
+  box-shadow: 0 15px 25px #5d62fd99;
+  transform: translateX(calc(70px * 1));
+}
+#section-4 ul li:nth-child(3).active ~ .indicator {
+  background: #05c46b;
+  box-shadow: 0 15px 25px #05c46b99;
+  transform: translateX(calc(70px * 2));
+}
+#section-4 ul li:nth-child(4).active ~ .indicator {
+  background: #0fbcf9;
+  box-shadow: 0 15px 25px #0fbcf999;
+  transform: translateX(calc(70px * 3));
+}
+#section-4 ul li:nth-child(5).active ~ .indicator {
+  background: #ffa801;
+  box-shadow: 0 15px 25px #ffa80199;
+  transform: translateX(calc(70px * 4));
+}
+
+/* ========== Section 5 ========== */
+#section-5 {
+  position: relative;
+  overflow: hidden;
+}
+#section-5 .modal {
+  position: absolute;
+  right: 20px;
+  bottom: -100%;
+  width: 360px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+#section-5 .modal.show {
+  bottom: 20px;
+  opacity: 1;
+}
+#section-5 .modal .top-content {
+  background: #34495e;
+  padding: 0 0 30px 0;
+}
+#section-5 .modal .top-content .fa-camera-retro {
+  font-size: 80px;
+}
+#section-5 .modal .left-text {
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: #f2f2f2;
+  font-weight: 400;
+  user-select: none;
+}
+#section-5 .modal .close-icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 23px;
+  color: silver;
+  cursor: pointer;
+}
+#section-5 .modal .bottom-content {
+  color: #000;
+  background: #fff;
+  padding: 15px 20px;
+}
+#section-5 .modal .bottom-content .text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #34495e;
+}
+#section-5 .modal .bottom-content p {
+  font-size: 18px;
+  line-height: 25px;
+  color: gray;
+}
+#section-5 .modal .bottom-content .close-btn {
+  padding: 15px 0;
+}
+#section-5 .modal .bottom-content .close-btn button,
+#section-5 .show-btn button {
+  padding: 9px 13px;
+  background: #27ae60;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+#section-5 .show-btn button {
+  padding: 12px 15px;
+}
+
+/* ========== Section 6 ========== */
+#section-6 {
+  position: relative;
+}
+#section-6 .v-align {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  width: 100%;
+  max-height: 90vh;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#section-6 .hero-btn {
+  position: relative;
+  width: 200px;
+  height: 66px;
+  margin: auto;
+}
+#section-6 .hero-btn .btn {
+  background: #ff0083;
+  color: #fff;
+  border: none;
+  outline: none;
+  display: inline-block;
+  width: 200px;
+  height: 66px;
+  text-align: center;
+  line-height: 66px;
+  font-size: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  appearance: none;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(600px);
+  transition: 0.2s;
+}
+#section-6 .hero-btn .btn:hover {
+  background: #e60076;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+#section-6 .hero-btn .btn:active {
+  font-size: 21px;
+  transform: perspective(600px) rotateX(15deg) scale(0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+#section-6 .active .hero-btn .btn:active {
+  font-size: 21px;
+  transform: perspective(600px) rotateX(15deg) scale(0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+#section-6 .particles-circle {
+  position: absolute;
+  background: #ff0083;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  left: 50%;
+  border-radius: 50%;
+  margin-left: -15px;
+  z-index: -1;
+  transform: scale(0);
+  visibility: hidden;
+}
+#section-6 .active .particles-circle:nth-of-type(odd) {
+  border: 2px solid #ff0083;
+  background: transparent;
+}
+@keyframes particles-1 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -182px;
+    top: 219px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(1) {
+  animation: particles-1 1.5s 0.025s;
+}
+@keyframes particles-2 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 177px;
+    top: 47px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(2) {
+  animation: particles-2 1.5s 0.05s;
+}
+@keyframes particles-3 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 116px;
+    top: -137px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(3) {
+  animation: particles-3 1.5s 0.075s;
+}
+@keyframes particles-4 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -60px;
+    top: 115px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(4) {
+  animation: particles-4 1.5s 0.1s;
+}
+@keyframes particles-5 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 113px;
+    top: 245px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(5) {
+  animation: particles-5 1.5s 0.125s;
+}
+@keyframes particles-6 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 69px;
+    top: -44px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(6) {
+  animation: particles-6 1.5s 0.15s;
+}
+@keyframes particles-7 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -19px;
+    top: -209px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(7) {
+  animation: particles-7 1.5s 0.175s;
+}
+@keyframes particles-8 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -229px;
+    top: -46px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(8) {
+  animation: particles-8 1.5s 0.2s;
+}
+@keyframes particles-9 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -243px;
+    top: -140px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(9) {
+  animation: particles-9 1.5s 0.225s;
+}
+@keyframes particles-10 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -1px;
+    top: -30px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+#section-6 .active .particles-circle:nth-of-type(10) {
+  animation: particles-10 1.5s 0.25s;
+}
+
+/* ========== Section 7 ========== */
+#section-7 .wrapper {
+  background: #29303b;
+  padding: 20px;
+  width: 500px;
+  border-radius: 10px;
+}
+#section-7 .wrapper form {
+  position: relative;
+  background: #2c3441;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#section-7 .wrapper form input {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ddd;
+  font-size: 1.5rem;
+  padding: 10px 50px;
+  outline: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+#section-7 .wrapper form input:focus {
+  border-color: #ff0083;
+}
+
+#section-7 .wrapper form input:focus ~ i {
+  color: #ff0083;
+}
+#section-7 .wrapper form input::placeholder {
+  color: #c4c4c4;
+}
+#section-7 .wrapper form i {
+  position: absolute;
+  left: 1.5em;
+  font-size: 1.5rem;
+  color: #c4c4c4;
+  pointer-events: none;
+  transform: translateY(-40%);
+  top: 50%;
+  transition: 0.3s;
+}
+#section-7 .wrapper form .counter {
+  position: absolute;
+  right: 1.2em;
+  font-size: 1.5rem;
+  padding: 0 5px;
+  color: #c4c4c4;
+  pointer-events: none;
+  transform: translateY(-40%);
+  top: 50%;
+  border-left: 1px solid #d8d8d8;
+  transition: 0.3s;
+}
+#section-7 .wrapper form input:focus ~ .counter {
+  color: #ff0083;
+  border-left: 1px solid #ff0083;
+}
+
+/* ========== Footer ========== */
+footer {
+  padding: 1em;
+  background: #1b1b1b;
+}

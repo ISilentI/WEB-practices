@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  background: #FFCE45;
+  color: white;
+}
+header,
+nav,
+section,
+.content-container,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-card,
+.box-1-1 > .gradient-card {
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== Menu ==========*/
+header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 1em 8em;
+  background: #7E370C;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+#logo {
+  width: 50px;
+  transition: 0.3s;
+}
+#logo:hover {
+  transform: scale(1.2);
+}
+nav {
+  justify-content: space-between;
+  width: max-content;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  transition: 0.3s;
+}
+nav a:hover {
+  border: 1px solid #f7bb8d;
+}
+
+/* ========== Hero Section ==========*/
+section {
+  width: 100%;
+  height: 100vh;
+}
+#home {
+  justify-content: space-evenly;
+}
+.gradient-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding: 3em;
+  border-radius: 1.5em;
+  background: linear-gradient(135deg, #f403d1, #64b5f6);
+
+}
+
+/* ========== Footer ==========*/
+footer {
+  background: #161a20;
+  padding: 3em;
+}
+
+/* ========== Scrollbar ==========*/
+::-webkit-scrollbar {
+  width: 10px;
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffa200, #d9670f);
+  border-radius: 10px;
+}
+
+/* ========== Home Cards ==========*/
+#home .card {
+  width: 25em;
+  padding: 1.5em;
+  background: #E5890A;
+  border-radius: 1em;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+#home .card:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#home .card:nth-child(2) p {
+  text-align: center;
+}
+#home .card:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+#home .card:nth-child(3) p {
+  text-align: right;
+}
+#home .card img {
+  width: 12em;
+}
+#home .card h3 {
+  color: #613411;
+  font-size: 1.5rem;
+}
+#home .card p {
+  color: #fff;
+}
+
+/* ========== Shoe Glass Cards ==========*/
+.glass-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 1em;
+}
+.img-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s cubic-bezier(0.54, -0.15, 0.34, 1.12);
+}
+.glass-card:hover .img-box {
+  transform: translateY(-100px);
+}
+
+.glass-card img {
+  width: 20em;
+  transition: 0.3s cubic-bezier(0.54, -0.15, 0.34, 1.12);
+}
+.glass-card:hover img {
+  transform: rotate(20deg) scale(1.1) translateY(-30px);
+}
+.glass-card h3 {
+  font-size: 2rem;
+}
+.glass-card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s cubic-bezier(0.54, -0.15, 0.34, 1.12);
+}
+.glass-card:hover .content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50px);
+}
+.glass-card h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0.5em 0;
+}
+.glass-card .size > span {
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  color: #111;
+  border-radius: 4px;
+  padding: 4px;
+  transition: 0.3s;
+  font-weight: 500;
+  margin: 0 3px;
+}
+.glass-card .size > span:hover {
+  background: #f04c2b;
+}
+.color {
+  display: flex;
+  align-items: center;
+}
+.glass-card .color span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fad4cd;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: 2px solid #fff;
+}
+.glass-card .color span:nth-child(2) {
+  background: #c41414;
+}
+.glass-card .color span:nth-child(3) {
+  background: #5833de;
+}
+.glass-card .buy-btn {
+  padding: 1em 3em;
+  text-decoration: none;
+  color: #fff;
+  background: #ff6f00;
+  border-radius: 2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+  box-shadow: 0 10px 15px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== Neumorphism Cards ==========*/
+#section-2 {
+  justify-content: space-around;
+}
+.n-card {
+  width: 30em;
+  padding: 1em;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 5px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+}
+.n-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 40em;
+  padding: 1em;
+  background: #c79642;
+  border-radius: 1em;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+.n-card:hover .n-box {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #ffc061, #d47f00);
+}
+.n-card:hover .n-box h3 {
+  color: #fff;
+}
+.n-card:hover .n-box p {
+  color: #ccc;
+}
+
+.n-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.n-content h2 {
+  color: rgba(255, 255, 255, 0.05);
+  font-size: 8em;
+}
+.n-content h3 {
+  color: #fad4cd;
+  font-size: 4em;
+}
+.n-content p {
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.3);
+}
+.n-content a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  margin-top: 1em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: #fad4cd;
+  font-size: 1.5em;
+}
+.n-card:nth-child(2) .n-content a {
+  background: #c41414;
+}
+.n-card:nth-child(3) .n-content a {
+  background: #5833de;
+}
+
+/* ========== Hover Opening Cards ==========*/
+#section-3 .card {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #6b428f;
+  background: linear-gradient(to bottom right, #c46923, #b05c1c);
+  padding: 2em;
+  border-radius: 2em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#section-3 .card .content {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: 0.3s;
+  max-width: 40%;
+}
+#section-3 .card .content h2 {
+  font-size: 3em;
+}
+#section-3 .card .content p {
+  font-size: 1.2em;
+  color: #ffa200;
+}
+#section-3 .card .content a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  margin-top: 1em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: #ff4800;
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+#section-3 .card img {
+  transform: translateX(-30%) scale(0.8);
+  transition: 0.3s;
+}
+#section-3 .card:hover .content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+#section-3 .card:hover img {
+  transform: translateX(15%) scale(1.2);
+}
