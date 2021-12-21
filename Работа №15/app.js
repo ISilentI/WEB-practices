@@ -59,11 +59,6 @@ function onSuccess(position) {
   fetchData();
 }
 
-function onError(error) {
-  infoTxt.innerText = error.message;
-  infoTxt.classList.add('error');
-}
-
 function fetchData() {
   infoTxt.innerText = 'Getting weather details...';
   infoTxt.classList.add('pending');
@@ -87,17 +82,17 @@ function weatherDetails(info) {
     const { temp, feels_like, humidity } = info.main;
 
     if (id == 800) {
-      wIcon.src = 'icons/sun.png';
+      wIcon.src = 'sun.png';
     } else if (id >= 200 && id <= 232) {
-      wIcon.src = 'icons/storm.png';
+      wIcon.src = 'storm.png';
     } else if (id >= 600 && id <= 622) {
-      wIcon.src = 'icons/snow.png';
+      wIcon.src = 'snow.png';
     } else if (id >= 701 && id <= 781) {
-      wIcon.src = 'icons/haze.png';
+      wIcon.src = 'haze.png';
     } else if (id >= 801 && id <= 804) {
-      wIcon.src = 'icons/cloud.png';
+      wIcon.src = 'cloud.png';
     } else if ((id >= 500 && id <= 531) || (id >= 300 && id <= 321)) {
-      wIcon.src = 'icons/rain.png';
+      wIcon.src = 'rain.png';
     }
 
     weatherPart.querySelector('.temp .numb').innerText = Math.floor(temp);

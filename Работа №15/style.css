@@ -20,10 +20,6 @@ footer,
   justify-content: center;
 }
 
-.gradient-card,
-.box-1-1 > .gradient-card {
-  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
-}
 html {
   scroll-behavior: smooth;
 }
@@ -76,7 +72,7 @@ ul {
 
 /* ========== Scrollbar ========== */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
   background: none;
 }
 ::-webkit-scrollbar-thumb {
@@ -108,7 +104,7 @@ ul {
   padding: 15px;
   border-radius: 12px;
   text-align: center;
-  background-color: #778bb3;
+  background-color: #afa462;
 }
 #home .movies li img {
   max-width: 200px;

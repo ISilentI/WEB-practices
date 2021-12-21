@@ -92,11 +92,12 @@ header nav a:hover {
   background: #fff;
   border-radius: 10px;
   padding: 22px 30px 40px;
-  background: #313b4a;
+  background: #d59122;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 #home .wrapper .header {
-  color: #4db2ec;
+  color: #d52222;
+  font-family: sans-serif;
   font-size: 34px;
   font-weight: 800;
   text-align: center;
@@ -139,7 +140,7 @@ header nav a:hover {
   border: none;
   outline: none;
   color: #fff;
-  background: #4db2ec;
+  background: #d52222;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -169,7 +170,7 @@ header nav a:hover {
   font-size: 20px;
 }
 #home .input-area input:is(:focus, :valid) {
-  border: 2px solid #4db2ec;
+  border: 2px solid #d52222;
 }
 #home .input-area .check-btn {
   position: absolute;
@@ -222,7 +223,7 @@ header nav a:hover {
   background: #fff;
   border-radius: 60px;
   transition: 0.3s;
-  box-shadow: 0 0 0 5px #2573ef;
+  box-shadow: 0 0 0 5px #c46dc9;
   overflow: hidden;
 }
 #section-2 .search.active {
@@ -248,7 +249,7 @@ header nav a:hover {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 3px solid #287dfc;
+  border: 3px solid #d52222;
   transform: translate(-4px, -4px);
 }
 #section-2 .search .icon::after {
@@ -256,7 +257,7 @@ header nav a:hover {
   position: absolute;
   width: 3px;
   height: 12px;
-  background: #287dfc;
+  background: #d52222;
   transform: translate(6px, 6px) rotate(315deg);
 }
 #section-2 .search .input {
@@ -420,12 +421,6 @@ header nav a:hover {
   transform: scale(0.9);
 }
 
-/*
-background: linear-gradient(45deg, #3503ad, #f7308c);
-background: linear-gradient(45deg, #c3f108, #0799e2);
-background: linear-gradient(45deg, #e91e63, #ffeb3b);
-*/
-
 /* ========== Section 4 ========== */
 #section-4 .fa-youtube {
   color: #ff0000;
@@ -531,7 +526,7 @@ background: linear-gradient(45deg, #e91e63, #ffeb3b);
   padding: 0 45px;
   font-size: 18px;
   border-radius: 5px;
-  border: 1px solid #bfbfbf;
+  border: 1px solid #c46dc9;
   border-bottom-width: 3px;
 }
 #section-5 form input::placeholder {
@@ -555,7 +550,7 @@ background: linear-gradient(45deg, #e91e63, #ffeb3b);
   margin-top: -10px;
 }
 #section-5 a {
-  color: #5372f0;
+  color: #c46dc9;
 }
 #section-5 input[type='submit'] {
   width: 100%;
@@ -563,14 +558,14 @@ background: linear-gradient(45deg, #e91e63, #ffeb3b);
   border: none;
   color: #fff;
   cursor: pointer;
-  background: #5372f0;
+  background: #c46dc9;
 }
 
 /* ========== Section 6 ========== */
 #section-6 .container {
   position: relative;
   width: 400px;
-  background: #313b4a;
+  background: #c99a6d;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   padding: 20px 30px;
   border-radius: 10px;
@@ -600,36 +595,36 @@ background: linear-gradient(45deg, #e91e63, #ffeb3b);
 }
 #section-6 .star-widget label {
   font-size: 40px;
-  color: #444;
+  color: #2a1818;
   padding: 10px;
   float: right;
   transition: 0.3s;
 }
 #section-6 .star-widget input:not(:checked) ~ label:hover,
 #section-6 .star-widget input:not(:checked) ~ label:hover ~ label {
-  color: #fd4;
+  color: #e2e848;
 }
 #section-6 .star-widget input:checked ~ label {
-  color: #fd4;
+  color: #e2e848;
 }
 #section-6 .star-widget input#rate-5:checked ~ label {
-  color: #fe7;
-  text-shadow: 0 0 20px #952;
+  color: #deff13;
+  text-shadow: 0 0 20px #111;
 }
 #section-6 #rate-1:checked ~ form h2::before {
-  content: 'Ненавижу 😡';
+  content: 'Ужасно 😡';
 }
 #section-6 #rate-2:checked ~ form h2::before {
-  content: 'Не нравится 😒';
+  content: 'Плохо 😒';
 }
 #section-6 #rate-3:checked ~ form h2::before {
-  content: 'Сойдёт 😕';
+  content: 'Средне 🤔';
 }
 #section-6 #rate-4:checked ~ form h2::before {
-  content: 'Нравится 😄';
+  content: 'Неплохо 🙂';
 }
 #section-6 #rate-5:checked ~ form h2::before {
-  content: 'ЭТО ШЕДЕВР 😍';
+  content: 'Превосходно 🤩';
 }
 #section-6 form h2 {
   text-align: center;
@@ -647,7 +642,7 @@ background: linear-gradient(45deg, #e91e63, #ffeb3b);
   width: 100%;
   height: 100%;
   outline: none;
-  background: #222;
+  background: #2a1818;
   padding: 10px;
   font-size: 17px;
   color: #eee;
@@ -666,7 +661,7 @@ background: linear-gradient(45deg, #e91e63, #ffeb3b);
   margin-top: 15px;
   border: none;
   outline: none;
-  background: #222;
+  background: #2a1818;
   color: #999;
   font-size: 17px;
   font-weight: 700;

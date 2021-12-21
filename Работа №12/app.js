@@ -14,28 +14,28 @@ openFace.addEventListener('click', () => {
 // ========== Section 1 ==========
 let data = [
     {
-        name: 'Маша',
-        age: 30,
+        name: 'Лёша',
+        age: 11,
     },
     {
         name: 'Паша',
-        age: 42,
+        age: 22,
     },
     {
-        name: 'Саша',
-        age: 19,
+        name: 'Вова',
+        age: 33,
     },
     {
         name: 'Даша',
-        age: 26,
+        age: 44,
     },
     {
-        name: 'Петя',
-        age: 23,
+        name: 'Дима',
+        age: 55,
     },
     {
         name: 'Вася',
-        age: 15,
+        age: 66,
     },
 ];
 
